@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "IDD Token Sync",
+  "version": "1.0.0",
+  "description": "Sync iddToken from WHIDD / IDDV2 to multiple target URLs",
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "IDD Token Sync"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

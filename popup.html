@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDD Token Sync</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="header-logo">⚡</span>
+    <span class="header-title">IDD Token Sync</span>
+  </div>
+
+  <!-- TWO COLUMNS -->
+  <div class="columns">
+
+    <!-- ── WHIDD ── -->
+    <div class="column">
+      <div class="col-header whidd-header">WHIDD</div>
+
+      <label class="field-label">Main URL (source)</label>
+      <input type="url" id="whidd-main-url" class="url-input" placeholder="https://whidd.example.com" />
+      <div class="origin-hint" id="whidd-origin-hint"></div>
+
+      <div class="targets-label">Target URLs <span class="badge" id="whidd-count">0</span></div>
+      <div class="target-list" id="whidd-targets" data-column="whidd">
+        <div class="drop-hint">Kéo thả URL vào đây hoặc dùng nút + bên dưới</div>
+      </div>
+
+      <button class="submit-btn whidd-btn" id="set-whidd-token">⚡ Set WHIDD Token</button>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+
+    <!-- ── IDDV2 ── -->
+    <div class="column">
+      <div class="col-header iddv2-header">IDDV2</div>
+
+      <label class="field-label">Main URL (source)</label>
+      <input type="url" id="iddv2-main-url" class="url-input" placeholder="https://iddv2.example.com" />
+      <div class="origin-hint" id="iddv2-origin-hint"></div>
+
+      <div class="targets-label">Target URLs <span class="badge" id="iddv2-count">0</span></div>
+      <div class="target-list" id="iddv2-targets" data-column="iddv2">
+        <div class="drop-hint">Kéo thả URL vào đây hoặc dùng nút + bên dưới</div>
+      </div>
+
+      <button class="submit-btn iddv2-btn" id="set-iddv2-token">⚡ Set IDDV2 Token</button>
+    </div>
+
+  </div><!-- /columns -->
+
+  <!-- SETTINGS ROW -->
+  <div class="settings-row">
+    <label class="toggle-label">
+      <input type="checkbox" id="reload-toggle" />
+      <span class="toggle-icon">🔄</span>
+      <span class="toggle-text">Reload main tab trước khi lấy token</span>
+    </label>
+    <span class="toggle-hint" id="reload-hint">off</span>
+  </div>
+  <div class="settings-row">
+    <label class="toggle-label">
+      <input type="checkbox" id="auto-open-toggle" />
+      <span class="toggle-icon">🗂</span>
+      <span class="toggle-text">Tự mở tab mới nếu target chưa mở</span>
+    </label>
+    <span class="toggle-hint" id="auto-open-hint">off</span>
+  </div>
+
+  <!-- ADD URL ROW -->
+  <div class="add-row">
+    <input type="url" id="new-target-url" class="url-input add-input" placeholder="Nhập target URL muốn thêm..." />
+    <button class="add-btn whidd-add" id="add-to-whidd">+ WHIDD</button>
+    <button class="add-btn iddv2-add" id="add-to-iddv2">+ IDDV2</button>
+  </div>
+
+  <!-- STATUS BAR -->
+  <div id="status" class="status hidden"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
